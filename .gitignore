@@ -1,10 +1,7 @@
 node_modules
-
-.vscode
-.idea
-
 build
+logs
+.idea
+.vscode
 
 .env
-
-logs

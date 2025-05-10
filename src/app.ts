@@ -1,23 +1,20 @@
-import "dotenv/config";
-import morgan from "morgan";
-import * as fs from "node:fs";
-import path from "path";
-import defaultRouter from "./routes/index";
+import 'dotenv/config';
+import morgan from 'morgan';
+import * as fs from 'node:fs';
+import path from 'path';
+import defaultRouter from './routes/index';
 
-import cors from "cors";
-import express from "express";
+import cors from 'cors';
+import express from 'express';
 
 const app = express();
 
-const logDir =  path.join(process.cwd(), "logs");
-if(!fs.existsSync(logDir)){
-    fs.mkdirSync(logDir);
+const logDir = path.join(process.cwd(), 'logs');
+if (!fs.existsSync(logDir)) {
+  fs.mkdirSync(logDir);
 }
-const accessLogStream = fs.createWriteStream(
-  path.join(logDir, "access.log"),
-  { flags: "a" }
-);
-app.use(morgan("combined", { stream: accessLogStream }));
+const accessLogStream = fs.createWriteStream(path.join(logDir, 'access.log'), { flags: 'a' });
+app.use(morgan('combined', { stream: accessLogStream }));
 
 app.use(cors());
 app.use(express.json());

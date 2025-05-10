@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "ts-node-dev --project tsconfig.json src/index.ts",
     "prebuild": "rimraf build",
-    "build": "npm ci && tsc",
+    "build": "tsc",
     "start": "node build/src/index.js",
     "db:generate": "drizzle-kit generate --config=drizzle.config.ts",
     "db:migrate": "node -r esbuild-register src/db/migrate.ts",

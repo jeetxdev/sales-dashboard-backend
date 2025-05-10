@@ -1,0 +1,1 @@
+ALTER TABLE "transactions" ADD COLUMN "transaction_code" uuid DEFAULT gen_random_uuid();

@@ -1,0 +1,1 @@
+ALTER TABLE "order_items" RENAME COLUMN "price" TO "amount";
